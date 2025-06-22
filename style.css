@@ -1,4 +1,4 @@
-/*Generea*/
+/* GENERAL */
 
 *{
   margin: 0;
@@ -6,11 +6,16 @@
 }
 
 body{
-  font-family: "Poppins" ,sans-serif;
+  font-family: "Poppins" ,sans-serif; 
 }
 
 html{
   scroll-behavior: smooth;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 p{
@@ -21,11 +26,38 @@ h1, h2, h3, p {
   margin: 0;
 }
 
-section + section {
-  margin-top: 5rem;
+:root{
+  --dark1: #000000;
+  --dark2: #0D3C44;
+  --dark3:  #5D432F;
+  --bright1: #B45139;
+  --light1: #D1B18F;
+  --light2: #FFFFFF;
 }
 
-/*Transition*/
+@font-face {
+  font-family: 'MyFont';
+  src: url('fonts/DxAlegant-ExtraLight.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'MyFont1';
+  src: url(fonts/NeueMetana-Regular.otf) format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'MyFont2';
+  src: url(fonts/NeueMetana-Bold.otf) format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+/* TRANSISTION */
 
 a, .btn{
   transition: all 300ms ease;
@@ -42,6 +74,8 @@ nav{
   height: 17vh;
   justify-content:space-around;
   align-items: center;
+  background-color:var(--dark2);
+  color: var(--light1);
 }
 
 .nav-links{
@@ -54,33 +88,32 @@ a{
   color: black;
   text-decoration: none;
   text-decoration-color: white;
+  color: var(--light1);
 }
 
 a:hover{
-  color:grey;
+  color: var(--bright1);
   text-decoration: underline;
   text-underline-offset: 1rem;
-  text-decoration-color: rgb(181,181,181);
+  text-decoration-color: var(--bright1);
 }
 
 .logo{
-  font-size: 2rem;
+  font-size:2rem;
+  font-family:MyFont2;
 }
 
 .logo:hover{
   cursor: default;
 }
 
-/*hamburger-menu*/
-
 /*  SECTIONS */
 
 section {
-  padding-top: 4vh;
-  height: 96vh;
-  margin: 0 10rem;
   box-sizing: border-box;
-  min-height: fit-content;
+  min-height: 100vh;     /* ensures it fills the screen at least */
+  height: auto;          /* allows growth if content is more */
+  padding: 4rem 10rem;
 }
 
 .section-container {
@@ -93,6 +126,9 @@ section {
   display: flex;
   justify-content: center;
   gap: 5rem;
+  min-height: calc(100vh - 17vh); /* to fit under navbar */
+  padding: 3rem 10rem;
+  background-color:var(--light1);
   height: 80vh;
 }
 
@@ -108,6 +144,7 @@ section {
   flex-direction:column;
   text-align:center;
   justify-content: center;
+
 }
 
 .portfolio-image{
@@ -120,24 +157,26 @@ section {
 
 .first-line{
   font-weight: 600;
-  color:rgb(85, 85, 85);
+  color:var(--dark2);
 }
 
 .name{
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
+  font-family: MyFont2;
+  color:var(--bright1);
 }
 
 .third-line{
   font-size:  1.75rem;
   font-weight: 600;
-  color: rgb(85, 85, 85);
+  color: var(--dark2);
 }
 
 .btn1 ,
 .btn2{
   background: none;
-  border: rgb(53, 53, 53) 0.1rem solid;
+  border: var(--dark2) 0.1rem solid;
   padding: 1rem;
   border-radius: 2rem;
   font-weight: 600;
@@ -147,17 +186,18 @@ section {
   margin-right: 0.6rem;
   transition: all 300ms ease;
   width:8rem;
+  color: var(--dark2);
 }
 
 .btn1:hover ,
 .btn2:hover{
-  color:white;
-  background-color:black;
-  border: white 0.1rem solid;
+  color:var(--light1);
+  background-color:var(--bright1);
+  border: var(--light1) 0.1rem solid;
 }
 
 .social1 ,
-.social2{
+.social2 {
     cursor: pointer;
     height: 2rem;
     margin-right: 0.6rem;
@@ -167,10 +207,12 @@ section {
 /* ABOUT-ME */
 
 #about-me{
-  display: flex;
-  justify-content: center;
-  height: 80vh;
-  margin-top:0;
+  position: relative;
+  background-color: var(--dark2);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--light1);
 }
 
 .about-me-container{
@@ -190,34 +232,36 @@ section {
 .subtitle1{
   color:rgb(85, 85, 85);
   font-size: 1rem;
+  color: var(--light1);
 }
 
 .subtitle2{
   font-size:3rem;
+  color: var(--bright1);
+  font-family:MyFont1;
 }
 
 .about-me-text{
-  color: black;
+  color:  var(--light1);
   text-align: left;
 }
 
 .about-me-languages-container{
-  border: rgb(85, 85, 85) 0.1rem solid;
+  border:var(--light1)  0.1rem solid;
   border-radius: 1rem; 
-  /* background-color: lightgrey; */
-  color: black;
+  color: var(--light1);;
   padding: 1rem;
   transition: all 300ms ease;
 } 
 
-.about-me-languages-container:hover{
-  border: white 0.1rem solid;
+ .about-me-languages-container:hover{
+  border: var(--dark2) 0.1rem solid;
   border-radius: 1rem; 
-  background-color: black; 
-  color: white;
+  background-color: var(--bright1); 
+  color: var(--dark2);
   padding: 1rem;
-  cursor: pointer;
-}
+  cursor: pointer; 
+} 
 
 .about-me-languages-container .subtitle{
   font-weight: 600;
@@ -231,24 +275,30 @@ section {
   flex-direction: row;
   justify-content: space-between;
   align-items:center;
-  padding: 2rem 2rem 1rem 2rem ;
+  padding: 1rem 1rem 1.5rem 1rem ;
+}
+
+.about-me-pic-conatiner{
+  background-color: var(--light1);
+  height:25rem;
+  width: 25rem;
 }
 
 .about-me-pic{
-  height: 400px;
-  width: 400px;
+  height: 18.75rem;
+  width: 18.75rem;
   object-fit: cover;
-  border-radius: 1rem;
+  border-radius: 0.8rem;
+  padding:1rem 1rem 0 1rem;
 }
 
 /* EXPERIENCE */
 
 #experience{
-  display: flex;
-  justify-content: center;
-  gap: 5rem;
-  height: 80vh;
   position: relative;
+  background-color: var(--light1);
+  display:flex;
+  align-items:center;
 }
 
 .experience-container{
@@ -260,13 +310,15 @@ section {
 #experience .title{
   font-size:3rem;
   text-align: center;
+  color: var(--bright1);
+  font-family:MyFont1;
 }
 
 .box1-container ,
 .box2-container{
-  border: rgb(85, 85, 85) 0.1rem solid;
+  border: var(--bright1)  0.1rem solid;
   border-radius: 1rem; 
-  color: black;
+  color: var(--dark2);
   padding: 1rem;
   transition: all 300ms ease;
 }
@@ -274,28 +326,25 @@ section {
 .experience-boxes{
   display: flex;
   justify-content: space-between;
-  align-items: start;
   gap: 2.5rem;
+  align-items: stretch;
 }
 
-.box1-container{
-  flex:1;
-  height:18rem;
-}
-
-.box2-container{
-  flex:1;
- height:18rem;
+.box1-container,
+.box2-container {
+  flex: 1;
+  padding: 1rem;
+  box-sizing: border-box;
+  height: auto;
 }
 
 /*  PROJECTS */
 
 #project{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5rem;
-  height: 80vh;
+  position: relative;
+  scroll-margin-top: 1rem;
+  background-color: var(--dark2);
+  scroll-margin-top: -2rem;
 }
 
 #project .title{
@@ -304,10 +353,10 @@ section {
 
 .project-boxes{
   display: grid;
-  grid-template-columns: 25rem 25rem  25rem;
-  column-gap: 2rem;
-  row-gap: 2rem;
-  justify-content: center;
+  grid-template-columns: repeat(3, 1fr); /* Exactly 3 per row */
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .projects--container{
@@ -317,21 +366,23 @@ section {
 }
 
 .project-container{
-  border: rgb(85, 85, 85) 0.1rem solid;
+  border: var(--light1)  0.1rem solid;
   border-radius: 1rem; 
-  color: black;
+  color: var(--light1);
   padding: 1rem;
   display:flex;
   flex-direction: column;
   align-items:center;
   gap: 0.5rem;
+  max-width: 22rem;
+  box-sizing: border-box;
 }
 
 .project-image{
-  background-color: grey;
-  color : white;
+  background-color: var(--dark3);
+  color : var(--light1);
   height: 11rem;
-  width: 23rem;
+  width: 100%;
   text-align:center;
   line-height: 11rem;
   border-radius: 1rem;
@@ -343,3 +394,78 @@ section {
   font-size: 2rem;
 }
 
+.project-container .btns {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.project-container .btn1,
+.project-container .btn2{
+  color:var(--light1);
+  border-color: var(--light1)
+}
+
+.project-container .btn1:hover,
+.project-container .btn2:hover{
+  border-color: var(--dark2);
+  color: var(--dark2);
+}
+
+/* CONTACT ME */
+
+#contact{
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  min-height: calc(100vh - 16vh); /* to fit under navbar */
+  padding: 3rem 10rem;
+  height: 80vh;
+  background-color: var(--light1);
+}
+
+.social3{
+   cursor: pointer;
+   height: 2.5rem;
+   margin-right: 0.6rem;
+}
+
+.contact-container{
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  text-align: center;
+  justify-content: center;
+  align-items:center;
+}
+
+.contact-me-container{
+  border: var(--bright1) 0.1rem solid;
+  border-radius: 2rem; 
+  color: var(--dark2);
+  padding: 1rem;
+  display:flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content: center;
+  gap: 2rem;
+  width: 25rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.email-box,
+.linkedin-box{
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+
+footer {
+  text-align: center;
+  height: 16vh;
+}
