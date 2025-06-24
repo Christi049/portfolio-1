@@ -1,38 +1,120 @@
 
-/*@media screen and (max-width: 1200px) {
-  #desktop-nav {
-    display: none;
-  }
-  #hamburger-nav {
-    display: flex;
-  }
-  #experience,
-  .experience-details-container {
-    margin-top: 2rem;
-  }
-  #profile,
-  .section-container {
-    display: block;
-  }
-  .arrow {
-    display: none;
-  }
+@media screen and (max-width: 1200px) {
+
   section,
-  .section-container {
-    height: fit-content;
+  #profile,
+  #contact {
+    padding: 2rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
-  section {
-    margin: 0 5%;
+
+    #desktop-nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    width: 100%;
   }
-  .section__pic-container {
-    width: 275px;
-    height: 275px;
-    margin: 0 auto 2rem;
+  
+  .menu-icon{
+    display:block;
+    cursor:pointer;
+    z-index: 100;
+    position: relative;
   }
-  .about-containers {
-    margin-top: 0;
+
+  #toggle-menu {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
   }
-} */
+
+  .nav-links{
+    position: absolute;
+    top: 100%; /* Position directly below the nav bar */
+    left: 0;
+    width: 100%;
+    background-color: var(--dark2);
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 0;
+    display: none;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+  }
+
+  #toggle-menu:checked ~ .nav-links {
+   display:flex;
+  } 
+
+  
+  #profile {
+    flex-direction: column;
+    gap: 2rem;
+    height: auto;
+  }
+
+  .title {
+    font-size: 1.5rem;;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .profile-image-container,
+  .portfolio-image {
+    width: 250px;
+    height: 250px;
+  }
+
+  .intro-content-container {
+    align-items: center;
+  }
+
+    /* Stack about-me content */
+  .about-me-container {
+    flex-direction: column;
+    padding: 1rem
+  }
+
+  .about-me-pic-conatiner,
+  .about-me-pic {
+    height: auto;
+    width: 14rem;
+  }
+
+  .about-me-pic{
+    width: 200px;
+    padding:0.5rem 0.5rem 0.5rem 0.5rem;
+  }
+
+  .langauges-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+   .experience-boxes {
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+}
 
 
 @media (max-width: 600px) {
@@ -49,9 +131,13 @@
     font-size: 1rem;
   }
 
+
   #desktop-nav{
     display: flex;
-    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    width: 100%;
   }
   
   .menu-icon{
@@ -208,13 +294,13 @@
     margin: 0;
   }
 
-  .footer-nav .footer-links a {
+  .footer-links a {
     color: var(--light1);
     font-size: 1rem;
     text-decoration: none;
   }
-  
-  #footer a:hover {
+
+  .footer-links a:hover {
     color: var(--bright1) ;
     text-decoration: underline ;
     text-underline-offset: 0.5rem ;

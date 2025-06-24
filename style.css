@@ -74,8 +74,8 @@ nav , .nav-links
 
 nav {
   height: 17vh;
-  justify-content:space-around;
   align-items: center;
+  justify-content: space-around;
   background-color:var(--dark2);
   color: var(--light1);
 }
@@ -94,12 +94,12 @@ nav {
 
 a{
   text-decoration: none;
-  text-decoration-color: white;
+  text-decoration-color: var(--light1);
   color: var(--light1);
 }
 
 a:hover,
-#footer a:hover{
+#footer a:hover {
   color: var(--bright1);
   text-decoration: underline;
   text-underline-offset: 1rem;
@@ -109,6 +109,7 @@ a:hover,
 .logo{
   font-size:2rem;
   font-family:MyFont2;
+  flex: 0 0 auto;
 }
 
 .logo:hover{
@@ -122,6 +123,8 @@ a:hover,
   background-color: var(--dark2);
   height: 17vh;
   position: relative; /* Important for positioning */
+  gap: 15rem;
+  
 }
 
 #toggle-menu{
@@ -480,6 +483,15 @@ section {
   width: 100%;
   padding-right: 2rem;
   padding-left: 2rem;
+}
+
+#contact a{
+  color:var(--dark2);
+}
+
+#contact a:hover{
+  color:var(--bright1);
+  text-decoration: none;
 }
 
 .email-box,
