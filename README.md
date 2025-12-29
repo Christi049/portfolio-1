@@ -3,6 +3,10 @@
 This is my personal portfolio website built using **HTML** and **CSS**.  
 It showcases my projects, skills, contact information, and a bit about me.
 
+# Deployed website
+
+Live Demo - [Portfolio](https://gorgeous-seahorse-71b73b.netlify.app/)
+
 ## 🧰 Technologies Used
 
 - HTML5  
