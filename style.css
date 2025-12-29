@@ -230,6 +230,13 @@ section {
   text-decoration: none;
 }
 
+.btns-profile{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.7rem;
+}
 
 .btn1:hover ,
 .btn2:hover{
